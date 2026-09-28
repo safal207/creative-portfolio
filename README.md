@@ -6,6 +6,10 @@ Website: https://safal207.github.io/creative-portfolio/
 
 The site is static. `dist/` contains the published pages and media. The GitHub Pages workflow checks local references before deployment.
 
+## Design resources
+
+The typography uses self-hosted Instrument Serif and Manrope from the Google Fonts library. Both are licensed under SIL Open Font License 1.1; the corresponding license texts are included in `dist/assets/fonts/`. The mobile villa image is a crop of the existing concept render, not a new property image.
+
 ## Evidence boundaries
 
 - Dubai Residence is a self-initiated, AI-assisted concept, not a client commission, measured architectural drawing, BIM model, or evidence of property sales.

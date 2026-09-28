@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("assets/fonts/Manrope-wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
 :root {
   --paper: #efeee8;
   --paper-light: #f7f6f0;
@@ -9,8 +31,8 @@
   --clay: #9b654e;
   --forest: #21352e;
   --forest-deep: #172923;
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: "Segoe UI", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans: "Manrope", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -63,7 +85,8 @@ h1 em, h2 em, .property-lead h3 em { color: #80715c; font-weight: 400; }
 .hero-footnote { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; width: 100%; margin-top: auto; padding-top: 3rem; color: var(--muted); font-size: .64rem; letter-spacing: .06em; text-transform: uppercase; }
 .hero-footnote strong { padding: 0 13px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); color: var(--ink); font-weight: 800; }
 .hero-visual { position: relative; min-height: 580px; margin: 0; overflow: hidden; background: #928e78; }
-.hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 54% center; }
+.hero-visual picture { display: block; width: 100%; height: 100%; }
+.hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 46% center; }
 .hero-visual::after { position: absolute; inset: 58% 0 0; background: linear-gradient(transparent, rgba(18, 29, 24, .49)); content: ""; pointer-events: none; }
 .hero-visual figcaption { position: absolute; z-index: 1; right: 28px; bottom: 24px; left: 28px; display: flex; justify-content: space-between; gap: 1rem; color: #fff; font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 
@@ -87,16 +110,18 @@ h2 { margin-bottom: 1.55rem; font-size: clamp(3.7rem, 6.2vw, 7.5rem); line-heigh
 .concept-study-heading > p { max-width: 450px; margin-bottom: .35rem; color: #536159; font-size: 1rem; line-height: 1.75; }
 .concept-study-pair { display: grid; grid-template-columns: minmax(0, 1.16fr) minmax(0, .84fr); gap: 16px; }
 .concept-study-frame { min-width: 0; margin: 0; background: var(--paper-light); }
-.concept-study-frame img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-.concept-study-frame figcaption { display: flex; flex-direction: column; align-items: flex-start; gap: .25rem; min-height: 118px; padding: 1.25rem clamp(18px, 2vw, 30px); border: 1px solid var(--line); border-top: 0; }
-.concept-study-frame .frame-number { margin-bottom: .3rem; color: var(--clay); font-size: .61rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-.concept-study-frame strong { font-family: var(--serif); font-size: clamp(1.4rem, 1.7vw, 2rem); font-weight: 400; letter-spacing: -.03em; line-height: 1.15; }
-.concept-study-frame figcaption > span:last-child { color: #647166; font-size: .71rem; }
+.concept-study-frame img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.concept-study-frame figcaption { display: flex; flex-direction: column; align-items: flex-start; gap: .35rem; min-height: 166px; padding: 1.35rem clamp(18px, 2vw, 30px); border: 1px solid var(--line); border-top: 0; }
+.concept-study-frame .frame-number { margin-bottom: .2rem; color: #86543e; font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.concept-study-frame strong { font-family: var(--serif); font-size: clamp(1.75rem, 2.15vw, 2.55rem); font-weight: 400; letter-spacing: -.02em; line-height: 1.1; }
+.concept-study-frame .frame-desc { color: #4e5e53; font-size: .86rem; line-height: 1.5; }
+.frame-open { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; margin-top: .35rem; border-bottom: 1px solid currentColor; color: var(--forest); font-size: .77rem; font-weight: 800; line-height: 1.35; }
+.frame-open:hover { color: var(--clay); }
 .concept-study-boundary { margin: 0; padding: 1.3rem 0 0; color: #5c695f; font-size: .78rem; line-height: 1.7; }
 .concept-study-boundary strong { color: var(--ink); }
 .viewer-evidence { display: grid; grid-template-columns: minmax(0, 1.24fr) minmax(0, .76fr); gap: clamp(24px, 4vw, 72px); align-items: center; max-width: 1440px; margin: clamp(48px, 6vw, 92px) auto 0; padding: clamp(22px, 3vw, 44px); background: #e3e6dd; }
 .viewer-evidence figure { min-width: 0; margin: 0; }
-.viewer-evidence img { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #172923; }
+.viewer-evidence img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #172923; }
 .viewer-evidence figcaption { margin-top: .7rem; color: #5b695e; font-size: .68rem; font-weight: 700; letter-spacing: .045em; }
 .viewer-evidence-copy h3 { margin-bottom: 1.2rem; font-family: var(--serif); font-size: clamp(2.4rem, 3.5vw, 4.2rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.05; }
 .viewer-evidence-copy > p:not(.eyebrow) { margin-bottom: 1rem; color: #526157; font-size: .93rem; line-height: 1.7; }
@@ -188,7 +213,8 @@ h2 { margin-bottom: 1.55rem; font-size: clamp(3.7rem, 6.2vw, 7.5rem); line-heigh
   .hero-grid { display: flex; flex-direction: column; }
   .hero-copy { padding: 32px 30px 40px; }
   h1 { font-size: clamp(4.1rem, 14vw, 6.4rem); }
-  .hero-visual { order: -1; min-height: 240px; height: 62vw; max-height: 340px; }
+  .hero-visual { order: -1; min-height: 0; height: auto; max-height: 420px; aspect-ratio: 4 / 3; }
+  .hero-visual img { object-position: center; }
   .hero-footnote { gap: 8px; }
   .hero-footnote strong { padding: 0 8px; }
   .hero-visual figcaption { right: 17px; bottom: 14px; left: 17px; font-size: .54rem; }
@@ -199,6 +225,8 @@ h2 { margin-bottom: 1.55rem; font-size: clamp(3.7rem, 6.2vw, 7.5rem); line-heigh
   .concept-study { margin-top: 72px; }
   .concept-study-pair { grid-template-columns: 1fr; gap: 22px; }
   .concept-study-frame figcaption { min-height: 0; }
+  .concept-study-frame .frame-number { font-size: .78rem; }
+  .concept-study-frame .frame-desc { font-size: .9rem; }
   .concept-study-heading h3 { font-size: clamp(3rem, 10vw, 4.5rem); }
   .property-details { grid-template-columns: 1fr; }
   .property-details { padding-bottom: 2rem; }
@@ -219,7 +247,7 @@ h2 { margin-bottom: 1.55rem; font-size: clamp(3.7rem, 6.2vw, 7.5rem); line-heigh
   .hero-actions .button, .link-row .button { width: 100%; }
   .hero-footnote { display: block; line-height: 1.9; }
   .hero-footnote strong { margin: 0 8px; }
-  .hero-visual { min-height: 220px; }
+  .hero-visual { min-height: 0; }
   .hero-visual figcaption span:last-child { display: none; }
   h2 { font-size: 3.45rem; }
   .scope-intro h2 { font-size: clamp(3rem, 12vw, 3.45rem); }

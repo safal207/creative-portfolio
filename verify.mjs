@@ -17,6 +17,20 @@ for (const [, value] of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
   }
 }
 
+for (const [, value] of html.matchAll(/\bsrcset="([^"]+)"/g)) {
+  for (const candidate of value.split(',')) {
+    const file = candidate.trim().split(/\s+/, 1)[0];
+    try { await stat(path.join(root, file)); }
+    catch { failures.push(`Missing srcset file: ${file}`); }
+  }
+}
+
+for (const [, value] of css.matchAll(/url\(["']?([^"')]+)["']?\)/g)) {
+  if (/^(https?:|data:)/.test(value)) continue;
+  try { await stat(path.join(root, value)); }
+  catch { failures.push(`Missing CSS file: ${value}`); }
+}
+
 const images = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]);
 for (const image of images) {
   if (!/\balt="[^"]+"/.test(image)) failures.push(`Image lacks nonempty alt: ${image}`);
