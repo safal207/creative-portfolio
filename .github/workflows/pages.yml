@@ -1,4 +1,4 @@
-name: Publish creative portfolio
+name: Publish architectural portfolio
 
 on:
   push:

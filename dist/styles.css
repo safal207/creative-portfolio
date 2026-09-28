@@ -134,30 +134,6 @@ h2 { margin-bottom: 1.55rem; font-size: clamp(3.7rem, 6.2vw, 7.5rem); line-heigh
 .scope-steps h3 { margin-bottom: .5rem; font-family: var(--serif); font-size: clamp(1.65rem, 2.3vw, 2.5rem); font-weight: 400; letter-spacing: -.035em; line-height: 1.15; }
 .scope-steps p { max-width: 390px; margin-bottom: 0; color: #c3cec4; font-size: .87rem; line-height: 1.65; }
 
-.design-section { background: var(--paper-light); }
-.section-heading-compact { margin-bottom: 3.2rem; }
-.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; max-width: 1440px; margin: 0 auto; }
-.project-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid #d7d9cf; background: var(--paper); }
-.card-image { height: clamp(260px, 27vw, 470px); overflow: hidden; background: #dde4df; }
-.card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-.project-card:hover .card-image img { transform: scale(1.035); }
-.card-image-put img { object-position: 52% 17%; }
-.card-image-tishe { padding: clamp(12px, 2.2vw, 33px); background: #dfe4dd; }
-.card-image-tishe img { object-fit: contain; }
-.card-body { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding: clamp(24px, 2.7vw, 48px); }
-.card-kicker { margin-bottom: 1.2rem; color: var(--clay); font-size: .65rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-.card-body h3 { margin-bottom: 1rem; font-family: var(--serif); font-size: clamp(2.1rem, 2.7vw, 3.3rem); font-weight: 400; letter-spacing: -.045em; line-height: 1.07; }
-.card-body h3 span { color: #757f75; }
-.card-body > p:not(.card-kicker):not(.card-note) { max-width: 580px; margin-bottom: 1.4rem; color: #516056; font-size: .97rem; line-height: 1.7; }
-.card-links { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: auto; }
-.card-links a { padding-bottom: .4rem; border-bottom: 1px solid var(--ink); font-size: .72rem; font-weight: 800; letter-spacing: .035em; }
-.card-links a:hover { color: var(--clay); border-color: var(--clay); }
-.card-note { margin: 2.1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: #68736a; font-size: .73rem; line-height: 1.65; }
-.games-section { background: var(--paper); }
-.games-grid .card-image { height: clamp(270px, 25vw, 430px); background: #172733; }
-.games-grid .card-image img { object-position: center; }
-.games-grid .project-card { background: var(--paper-light); }
-
 .contact-section { display: grid; grid-template-columns: 1.12fr .88fr; align-items: end; gap: 5vw; padding: clamp(86px, 9vw, 145px) clamp(24px, 4.2vw, 78px); background: var(--forest-deep); color: var(--paper-light); }
 .contact-section h2 { margin-bottom: 0; font-size: clamp(4.2rem, 7vw, 8.7rem); line-height: .98; }
 .contact-copy { max-width: 550px; }
@@ -206,8 +182,7 @@ h2 { margin-bottom: 1.55rem; font-size: clamp(3.7rem, 6.2vw, 7.5rem); line-heigh
   .header-cta { min-height: 44px; padding: .45rem 0; font-size: .72rem; gap: .6rem; }
   .main-nav { justify-content: space-between; gap: .2rem .9rem; }
   .main-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .76rem; }
-  .card-links a, .text-link, .scope-link, .tour-reel-copy > a { display: inline-flex; align-items: center; min-height: 44px; font-size: .76rem; }
-  .card-links a { padding: .5rem 0; }
+  .text-link, .scope-link, .tour-reel-copy > a { display: inline-flex; align-items: center; min-height: 44px; font-size: .76rem; }
   .hero-topline { min-height: 44px; }
   .hero-topline span:last-child, .hero-endline span:first-child { display: none; }
   .hero-grid { display: flex; flex-direction: column; }
@@ -225,13 +200,11 @@ h2 { margin-bottom: 1.55rem; font-size: clamp(3.7rem, 6.2vw, 7.5rem); line-heigh
   .concept-study-pair { grid-template-columns: 1fr; gap: 22px; }
   .concept-study-frame figcaption { min-height: 0; }
   .concept-study-heading h3 { font-size: clamp(3rem, 10vw, 4.5rem); }
-  .property-details, .project-grid { grid-template-columns: 1fr; }
+  .property-details { grid-template-columns: 1fr; }
   .property-details { padding-bottom: 2rem; }
   .scope-steps { grid-template-columns: 1fr; gap: 0; }
   .scope-steps li { display: grid; grid-template-columns: 38px 1fr; gap: 1rem; }
   .scope-steps li > span { margin-bottom: 0; }
-  .card-image { height: 64vw; min-height: 260px; max-height: 390px; }
-  .games-grid .card-image { height: 58vw; min-height: 230px; }
   .contact-section h2 { font-size: clamp(4rem, 13vw, 6.7rem); }
   .site-footer { flex-direction: column; }
 }
